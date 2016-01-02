@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+    <meta charset="utf-8">
+    <title>Web Console</title>
+
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/console/console.css">
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="https://code.angularjs.org/2.0.0-beta.0/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/angular2.dev.js"></script>
+    <script>
+            System.config({
+                transpiler: 'typescript', 
+                typescriptOptions: { emitDecoratorMetadata: true }, 
+                packages: {'app/console': {defaultExtension: 'ts'}} 
+            });
+            System.import('app/console/boot')
+                .then(null, console.error.bind(console));
+        </script>
+    </head>
+
+	<body>
+        
+        <console-app>Loading...</console-app>
+        
+        
+		<div id="footer">
+			<input type="text" class="form-control" id="consoleInput"/>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+		
+
+  </body>
+</html>
